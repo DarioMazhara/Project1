@@ -20,8 +20,15 @@ public class SortingImplementation  implements SortingInterface {
             int key = arr[i];
             int j = i-1;
 
-            while (j >= lowIndex && arr[j].compareTo(key) < 0) { 
+            if (reversed) {
+                while (j >= lowIndex && arr[j].compareTo(key) < 0) { 
                 arr[j+1] = arr[j];
+            }
+            else {
+                while (j >= lowIndex && arr[j].compareTo(key) > 0) {
+                arr[j+1] = arr[j];
+            }
+            }
 
 
             arr[j+1] = key;
