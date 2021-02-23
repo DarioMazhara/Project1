@@ -145,23 +145,33 @@ public class SortingImplementation  implements SortingInterface {
 
         while (a < arr1.length && b < arr2.length) {
             if (arr1[a] < arr2[b]) {
-                res[i++] = arr1[a++];
+                res[i] = arr1[a];
+                a++;
+                i++;
             }
             else if (arr2[b] < arr1[a]) {
-                res[i++] = arr2[b++];
+                res[i] = arr2[b];
+                b++;
+                i++;
             }
             else {
-                res[i++] = arr2[b++];
+                res[i] = arr2[b];
+                i++;
+                b++;
                 a++;
             }
         }
 
         while (a < arr1.length) {
-            res[i++] = arr1[a++];
+            res[i] = arr1[a];
+            a++;
+            i++;
         }
 
         while (b < arr2.length) {
-            res[i++] = arr2[b++]
+            res[i] = arr2[b];
+            i++;
+            b++;
         }
 
         return res;
