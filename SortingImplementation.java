@@ -16,22 +16,22 @@ public class SortingImplementation  implements SortingInterface {
     public void insertionSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
         // FILL ON CODE
 
-        for (int i = lowIndex+1; i < highIndex; i++) {
+        for (int i = lowIndex + 1; i < highIndex; i++) {
             int key = arr[i];
-            int j = i-1;
+            int j = i - 1;
 
             if (reversed) {
                 while (j >= lowIndex && arr[j].compareTo(key) < 0) { 
-                arr[j+1] = arr[j];
-            }
+                    arr[j + 1] = arr[j];
+                }
             else {
                 while (j >= lowIndex && arr[j].compareTo(key) > 0) {
-                arr[j+1] = arr[j];
-            }
+                   arr[j + 1] = arr[j];
+                }
             }
 
 
-            arr[j+1] = key;
+            arr[j + 1] = key;
         }
     }
 }
@@ -49,9 +49,9 @@ public class SortingImplementation  implements SortingInterface {
         while (reversed) {
             reversed = !reversed;
 
-            for (int i = lowindex; i < highindex -1; i++) {
-                if (arr[i] > arr[i+1]) {
-                    Comparable temp = arr[i+1];
+            for (int i = lowindex; i < highindex - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    Comparable temp = arr[i + 1];
                     arr[i + 1] = arr[i];
                     arr[i] = temp;
                     reversed = !reversed;
